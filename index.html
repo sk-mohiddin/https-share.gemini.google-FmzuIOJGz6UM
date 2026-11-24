@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VANGUARD ATHLETICS | West Loop Performance &amp; Conditioning Club</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Space Grotesk for bold architectural headlines -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#0B0C0E',
+                        charcoal: '#14161A',
+                        slateDark: '#1E2128',
+                        volt: '#D4FF00',
+                        voltHover: '#BFE600',
+                        stoneLight: '#F4F5F7',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-obsidian text-zinc-100 font-sans antialiased selection:bg-volt selection:text-obsidian overflow-x-hidden">
+
+    <!-- =====================================================================
+         1. HEADER & NAVIGATION
+    ====================================================================== -->
+    <header class="sticky top-0 z-40 bg-obsidian/90 backdrop-blur-md border-b border-zinc-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Wordmark / Logo -->
+                <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-10 h-10 bg-volt rounded-lg flex items-center justify-center text-obsidian font-display font-bold text-xl tracking-tighter transition-transform group-hover:scale-105">
+                        V/A
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold text-xl tracking-tight text-white leading-none">VANGUARD</span>
+                        <span class="text-[11px] font-semibold tracking-[0.2em] text-zinc-400 uppercase mt-1">West Loop • Chicago</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+                    <a href="#programs" class="text-sm font-medium text-zinc-300 hover:text-volt transition-colors py-2">Programs</a>
+                    <a href="#trainers" class="text-sm font-medium text-zinc-300 hover:text-volt transition-colors py-2">Trainers</a>
+                    <a href="#facilities" class="text-sm font-medium text-zinc-300 hover:text-volt transition-colors py-2">Facilities</a>
+                    <a href="#membership" class="text-sm font-medium text-zinc-300 hover:text-volt transition-colors py-2">Membership</a>
+                    <a href="#mobile-app" class="text-sm font-medium text-zinc-300 hover:text-volt transition-colors py-2 inline-flex items-center gap-1.5">
+                        <i data-lucide="smartphone" class="w-4 h-4 text-volt"></i>
+                        Get the App
+                    </a>
+                    <a href="#contact" class="text-sm font-medium text-zinc-300 hover:text-volt transition-colors py-2">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA & Mobile Menu Toggle -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openActionModal('join', 'Foundations Pass')" class="hidden sm:inline-flex items-center justify-center bg-volt hover:bg-voltHover text-obsidian font-semibold text-sm px-5 py-3 rounded-lg transition-all shadow-lg shadow-volt/10 cursor-pointer">
+                        Join Now
+                    </button>
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden inline-flex items-center justify-center p-3 rounded-lg text-zinc-300 hover:text-white hover:bg-slateDark focus:outline-none focus:ring-2 focus:ring-volt" aria-label="Toggle Menu">
+                        <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-charcoal border-b border-zinc-800 px-4 pt-3 pb-6 space-y-2">
+            <a href="#programs" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-zinc-200 hover:bg-slateDark hover:text-volt">Programs</a>
+            <a href="#trainers" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-zinc-200 hover:bg-slateDark hover:text-volt">Trainers</a>
+            <a href="#facilities" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-zinc-200 hover:bg-slateDark hover:text-volt">Facilities</a>
+            <a href="#membership" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-zinc-200 hover:bg-slateDark hover:text-volt">Membership</a>
+            <a href="#mobile-app" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-zinc-200 hover:bg-slateDark hover:text-volt">Get the App</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-medium text-zinc-200 hover:bg-slateDark hover:text-volt">Contact</a>
+            <div class="pt-3 px-1">
+                <button onclick="openActionModal('join', 'Foundations Pass')" class="w-full bg-volt hover:bg-voltHover text-obsidian font-bold text-base py-3.5 rounded-lg transition-colors">
+                    Join Now
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- =====================================================================
+             2. HERO SECTION
+        ====================================================================== -->
+        <section class="relative overflow-hidden border-b border-zinc-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-28">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                    
+                    <!-- Left Column: Copy & CTAs -->
+                    <div class="lg:col-span-6 space-y-7">
+                        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slateDark border border-zinc-700/80 text-xs font-semibold tracking-wider uppercase text-volt">
+                            <span class="w-2 h-2 rounded-full bg-volt"></span>
+                            West Loop Strength &amp; Conditioning Club
+                        </div>
+
+                        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.08]">
+                            Build lasting strength, endurance, and resilient movement.
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-xl">
+                            Vanguard Athletics combines calibrated strength equipment, small-group coaching, and dedicated recovery spaces in an uncrowded, welcoming club built for first-time lifters and seasoned athletes alike.
+                        </p>
+
+                        <!-- Primary & Secondary CTAs -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <a href="#membership" class="inline-flex items-center justify-center gap-2 bg-volt hover:bg-voltHover text-obsidian font-bold text-base px-7 py-4 rounded-xl transition-all shadow-lg shadow-volt/15">
+                                Explore Memberships
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                            <button onclick="openActionModal('tour', 'Private Club Tour')" class="inline-flex items-center justify-center gap-2 bg-slateDark hover:bg-zinc-800 text-white border border-zinc-700 font-semibold text-base px-7 py-4 rounded-xl transition-all cursor-pointer">
+                                <i data-lucide="calendar" class="w-5 h-5 text-volt"></i>
+                                Book a Tour
+                            </button>
+                        </div>
+
+                        <!-- Grounded Community & Facility Highlights -->
+                        <div class="pt-6 border-t border-zinc-800/90 grid grid-cols-3 gap-4">
+                            <div>
+                                <p class="font-display font-bold text-xl sm:text-2xl text-white">24,000</p>
+                                <p class="text-xs sm:text-sm text-zinc-400 mt-0.5">Sq. Ft. Training Floor</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-xl sm:text-2xl text-white">14 Max</p>
+                                <p class="text-xs sm:text-sm text-zinc-400 mt-0.5">Athletes Per Class</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-xl sm:text-2xl text-white">7 Days</p>
+                                <p class="text-xs sm:text-sm text-zinc-400 mt-0.5">Open 5 AM – 10 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: High-Impact Authentic Training Visual -->
+                    <div class="lg:col-span-6">
+                        <div class="relative rounded-2xl overflow-hidden bg-charcoal border border-zinc-800 shadow-2xl">
+                            <img 
+                                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80" 
+                                alt="Athletes training with barbells and racks inside Vanguard Athletics West Loop" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/1200x900/14161A/D4FF00?text=Vanguard+Athletics+Training+Floor';"
+                                class="w-full h-[380px] sm:h-[480px] lg:h-[540px] object-cover object-center"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent"></div>
+                            <div class="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-4 bg-obsidian/85 backdrop-blur-md border border-zinc-800 p-4 rounded-xl">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-volt/15 border border-volt/30 flex items-center justify-center text-volt">
+                                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold text-white">840 W Fulton Market, Chicago</p>
+                                        <p class="text-xs text-zinc-400">Complimentary 1-on-1 Movement Assessment for New Members</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             3. WORKOUT PROGRAMS
+        ====================================================================== -->
+        <section id="programs" class="py-20 sm:py-24 bg-charcoal border-b border-zinc-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header & Filter Tabs -->
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+                    <div class="max-w-2xl">
+                        <span class="text-xs font-bold tracking-[0.2em] uppercase text-volt">Training Disciplines</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">
+                            Structured programs for every starting point.
+                        </h2>
+                        <p class="text-zinc-300 mt-3 text-base leading-relaxed">
+                            Whether you are learning foundational barbell mechanics or preparing for an endurance event, every session is coached with clear progressions.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Filter Pills -->
+                    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter workout programs">
+                        <button data-filter="all" class="program-filter-btn bg-volt text-obsidian font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer">All Programs</button>
+                        <button data-filter="strength" class="program-filter-btn bg-slateDark text-zinc-300 hover:text-white font-medium text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer">Strength &amp; Coaching</button>
+                        <button data-filter="conditioning" class="program-filter-btn bg-slateDark text-zinc-300 hover:text-white font-medium text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer">Engine &amp; Group</button>
+                        <button data-filter="mobility" class="program-filter-btn bg-slateDark text-zinc-300 hover:text-white font-medium text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer">Mobility &amp; Foundations</button>
+                    </div>
+                </div>
+
+                <!-- 6 Program Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="programs-grid">
+                    
+                    <!-- Card 1: Strength Training -->
+                    <article data-category="strength" class="program-card bg-obsidian border border-zinc-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-700 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-5">
+                                <span class="px-3 py-1 rounded-md bg-slateDark text-volt text-xs font-semibold tracking-wide uppercase">Strength Training</span>
+                                <i data-lucide="dumbbell" class="w-5 h-5 text-zinc-400"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-white">Barbell &amp; Progressive Strength</h3>
+                            <div class="mt-4 space-y-3 text-sm text-zinc-300 leading-relaxed">
+                                <p><strong class="text-white font-semibold">Who it suits:</strong> Lifters looking to build compound strength, joint resilience, and confident technique.</p>
+                                <p><strong class="text-white font-semibold">What a session involves:</strong> Structured warm-ups, primary compound lifts (squat, hinge, press, pull), and targeted accessory work paced for proper recovery.</p>
+                            </div>
+                        </div>
+                        <div class="mt-7 pt-5 border-t border-zinc-800/90">
+                            <button onclick="openProgramModal('Barbell & Progressive Strength', 'Strength Training', 'Ideal for anyone looking to develop foundational or advanced compound strength in a supportive, coached environment.', 'Each 60-minute session begins with joint-specific preparation, moves into a primary barbell or dumbbell movement block with individualized load selection, and finishes with unilateral accessory exercises to support posture and balance.')" class="inline-flex items-center gap-2 text-sm font-semibold text-volt hover:text-voltHover transition-colors cursor-pointer">
+                                Learn more about Strength
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: Personal Training -->
+                    <article data-category="strength" class="program-card bg-obsidian border border-zinc-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-700 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-5">
+                                <span class="px-3 py-1 rounded-md bg-slateDark text-volt text-xs font-semibold tracking-wide uppercase">Personal Training</span>
+                                <i data-lucide="user-check" class="w-5 h-5 text-zinc-400"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-white">1-on-1 Individualized Coaching</h3>
+                            <div class="mt-4 space-y-3 text-sm text-zinc-300 leading-relaxed">
+                                <p><strong class="text-white font-semibold">Who it suits:</strong> Individuals seeking tailored programming, return-to-training guidance, or dedicated accountability.</p>
+                                <p><strong class="text-white font-semibold">What a session involves:</strong> Custom movement screening, bespoke strength and conditioning blocks, and real-time biomechanical feedback.</p>
+                            </div>
+                        </div>
+                        <div class="mt-7 pt-5 border-t border-zinc-800/90">
+                            <button onclick="openProgramModal('1-on-1 Individualized Coaching', 'Personal Training', 'Designed for members with specific athletic goals, busy schedules, or orthopedic considerations requiring tailored progressions.', 'Your coach designs a multi-week plan around your movement assessment, guiding every rep, adjusting training volume based on recovery, and tracking habits outside the gym.')" class="inline-flex items-center gap-2 text-sm font-semibold text-volt hover:text-voltHover transition-colors cursor-pointer">
+                                Learn more about Coaching
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: Group Classes -->
+                    <article data-category="conditioning" class="program-card bg-obsidian border border-zinc-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-700 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-5">
+                                <span class="px-3 py-1 rounded-md bg-slateDark text-volt text-xs font-semibold tracking-wide uppercase">Group Classes</span>
+                                <i data-lucide="users" class="w-5 h-5 text-zinc-400"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-white">Vanguard Team Training</h3>
+                            <div class="mt-4 space-y-3 text-sm text-zinc-300 leading-relaxed">
+                                <p><strong class="text-white font-semibold">Who it suits:</strong> Members who thrive on shared energy, structured coaching, and balanced full-body workouts.</p>
+                                <p><strong class="text-white font-semibold">What a session involves:</strong> Capped at 14 athletes, combining kettlebell mechanics, sled work, and ergometer intervals with scalable options.</p>
+                            </div>
+                        </div>
+                        <div class="mt-7 pt-5 border-t border-zinc-800/90">
+                            <button onclick="openProgramModal('Vanguard Team Training', 'Group Classes', 'Built for members who want the camaraderie of a team setting without sacrificing individual coaching attention.', 'Capped at 14 participants so coaches can offer hands-on form cues. Sessions pair functional strength stations with cooperative conditioning blocks easily scaled to any fitness level.')" class="inline-flex items-center gap-2 text-sm font-semibold text-volt hover:text-voltHover transition-colors cursor-pointer">
+                                Learn more about Group Classes
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Card 4: Conditioning -->
+                    <article data-category="conditioning" class="program-card bg-obsidian border border-zinc-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-700 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-5">
+                                <span class="px-3 py-1 rounded-md bg-slateDark text-volt text-xs font-semibold tracking-wide uppercase">Conditioning</span>
+                                <i data-lucide="activity" class="w-5 h-5 text-zinc-400"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-white">Aerobic &amp; Threshold Engine</h3>
+                            <div class="mt-4 space-y-3 text-sm text-zinc-300 leading-relaxed">
+                                <p><strong class="text-white font-semibold">Who it suits:</strong> Runners, cyclists, hybrid athletes, and anyone looking to improve cardiovascular stamina and work capacity.</p>
+                                <p><strong class="text-white font-semibold">What a session involves:</strong> Paced intervals across Concept2 rowers, SkiErgs, assault bikes, and turf carries using heart-rate or RPE zones.</p>
+                            </div>
+                        </div>
+                        <div class="mt-7 pt-5 border-t border-zinc-800/90">
+                            <button onclick="openProgramModal('Aerobic & Threshold Engine', 'Conditioning', 'Suited for hybrid race entrants, recreational runners, and members wanting sustainable cardiovascular endurance.', 'Rather than random exhaustion, sessions alternate between sustained aerobic pacing and controlled threshold intervals on low-impact ergometers and turf lanes.')" class="inline-flex items-center gap-2 text-sm font-semibold text-volt hover:text-voltHover transition-colors cursor-pointer">
+                                Learn more about Conditioning
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Card 5: Yoga & Mobility -->
+                    <article data-category="mobility" class="program-card bg-obsidian border border-zinc-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-700 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-5">
+                                <span class="px-3 py-1 rounded-md bg-slateDark text-volt text-xs font-semibold tracking-wide uppercase">Yoga &amp; Mobility</span>
+                                <i data-lucide="wind" class="w-5 h-5 text-zinc-400"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-white">Athletic Mobility &amp; Breathwork</h3>
+                            <div class="mt-4 space-y-3 text-sm text-zinc-300 leading-relaxed">
+                                <p><strong class="text-white font-semibold">Who it suits:</strong> Desk-bound professionals, heavy lifters, and athletes looking to expand active range of motion.</p>
+                                <p><strong class="text-white font-semibold">What a session involves:</strong> Loaded stretching, controlled articular rotations, Vinyasa flow sequences, and parasympathetic down-regulation.</p>
+                            </div>
+                        </div>
+                        <div class="mt-7 pt-5 border-t border-zinc-800/90">
+                            <button onclick="openProgramModal('Athletic Mobility & Breathwork', 'Yoga & Mobility', 'Created for anyone experiencing stiffness from prolonged sitting or high-volume strength training.', 'Held in our acoustic-insulated timber studio, sessions combine end-range isometric strength with restorative breathwork to improve shoulder, hip, and thoracic mobility.')" class="inline-flex items-center gap-2 text-sm font-semibold text-volt hover:text-voltHover transition-colors cursor-pointer">
+                                Learn more about Mobility
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Card 6: Beginner Programs -->
+                    <article data-category="mobility" class="program-card bg-obsidian border border-zinc-800 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-zinc-700 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-5">
+                                <span class="px-3 py-1 rounded-md bg-slateDark text-volt text-xs font-semibold tracking-wide uppercase">Beginner Program</span>
+                                <i data-lucide="compass" class="w-5 h-5 text-zinc-400"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-white">Foundations Onboarding</h3>
+                            <div class="mt-4 space-y-3 text-sm text-zinc-300 leading-relaxed">
+                                <p><strong class="text-white font-semibold">Who it suits:</strong> Newcomers to strength training or members returning after a long break away from the gym.</p>
+                                <p><strong class="text-white font-semibold">What a session involves:</strong> Step-by-step instruction on fundamental movement patterns, equipment setup, and pacing in a supportive setting.</p>
+                            </div>
+                        </div>
+                        <div class="mt-7 pt-5 border-t border-zinc-800/90">
+                            <button onclick="openProgramModal('Foundations Onboarding', 'Beginner Program', 'Tailored specifically for beginners or anyone who wants to master gym fundamentals without intimidation.', 'Coaches walk you through proper bracing, hinge and squat mechanics, kettlebell handling, and equipment adjustments so you feel completely at home on the training floor.')" class="inline-flex items-center gap-2 text-sm font-semibold text-volt hover:text-voltHover transition-colors cursor-pointer">
+                                Learn more about Foundations
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             4. TRAINER PROFILES
+        ====================================================================== -->
+        <section id="trainers" class="py-20 sm:py-24 bg-obsidian border-b border-zinc-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mb-12">
+                    <span class="text-xs font-bold tracking-[0.2em] uppercase text-volt">Coaching Roster</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">
+                        Guided by career coaches, not cheerleaders.
+                    </h2>
+                    <p class="text-zinc-300 mt-3 text-base leading-relaxed">
+                        Our coaching staff brings backgrounds in strength and conditioning, physical preparation, and movement education to meet you where you are.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Trainer 1 -->
+                    <div class="bg-charcoal border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="aspect-[4/4] overflow-hidden bg-slateDark">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=800&q=80" 
+                                    alt="Coach Marcus Vance" 
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x600/1E2128/F4F5F7?text=Marcus+Vance';"
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-volt">Head of Strength</span>
+                                <h3 class="font-display font-bold text-xl text-white mt-1">Marcus Vance</h3>
+                                <p class="text-sm text-zinc-300 mt-3 leading-relaxed">
+                                    Specializes in barbell mechanics, athletic power development, and building confidence for first-time strength lifters.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button onclick="openActionModal('coaching', 'Coaching Enquiry: Marcus Vance')" class="w-full py-3 px-4 rounded-xl bg-slateDark hover:bg-volt hover:text-obsidian text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                                Enquire with Marcus
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 2 -->
+                    <div class="bg-charcoal border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="aspect-[4/4] overflow-hidden bg-slateDark">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=800&q=80" 
+                                    alt="Coach Elena Rostova" 
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x600/1E2128/F4F5F7?text=Elena+Rostova';"
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-volt">Conditioning &amp; Endurance</span>
+                                <h3 class="font-display font-bold text-xl text-white mt-1">Elena Rostova</h3>
+                                <p class="text-sm text-zinc-300 mt-3 leading-relaxed">
+                                    Focuses on aerobic base building, hybrid race preparation, and sustainable interval pacing on ergometers and turf.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button onclick="openActionModal('coaching', 'Coaching Enquiry: Elena Rostova')" class="w-full py-3 px-4 rounded-xl bg-slateDark hover:bg-volt hover:text-obsidian text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                                Enquire with Elena
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 3 -->
+                    <div class="bg-charcoal border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="aspect-[4/4] overflow-hidden bg-slateDark">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80" 
+                                    alt="Coach Devon Brooks" 
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x600/1E2128/F4F5F7?text=Devon+Brooks';"
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-volt">Functional &amp; Foundations</span>
+                                <h3 class="font-display font-bold text-xl text-white mt-1">Devon Brooks</h3>
+                                <p class="text-sm text-zinc-300 mt-3 leading-relaxed">
+                                    Leads our Foundations onboarding and small-group classes, emphasizing kettlebell skill and joint-friendly progressions.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button onclick="openActionModal('coaching', 'Coaching Enquiry: Devon Brooks')" class="w-full py-3 px-4 rounded-xl bg-slateDark hover:bg-volt hover:text-obsidian text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                                Enquire with Devon
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Trainer 4 -->
+                    <div class="bg-charcoal border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <div class="aspect-[4/4] overflow-hidden bg-slateDark">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" 
+                                    alt="Coach Maya Lin" 
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x600/1E2128/F4F5F7?text=Maya+Lin';"
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                >
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-volt">Mobility &amp; Recovery</span>
+                                <h3 class="font-display font-bold text-xl text-white mt-1">Maya Lin</h3>
+                                <p class="text-sm text-zinc-300 mt-3 leading-relaxed">
+                                    Integrates Vinyasa yoga, end-range mobility training, and breathwork to help members move pain-free and recover deeply.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6">
+                            <button onclick="openActionModal('coaching', 'Coaching Enquiry: Maya Lin')" class="w-full py-3 px-4 rounded-xl bg-slateDark hover:bg-volt hover:text-obsidian text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                                Enquire with Maya
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             5. FACILITIES
+        ====================================================================== -->
+        <section id="facilities" class="py-20 sm:py-24 bg-charcoal border-b border-zinc-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                    <div class="max-w-2xl">
+                        <span class="text-xs font-bold tracking-[0.2em] uppercase text-volt">The Club</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">
+                            Thoughtfully zoned spaces built for focus.
+                        </h2>
+                        <p class="text-zinc-300 mt-3 text-base leading-relaxed">
+                            Natural daylight, acoustic baffling, and generous spacing between racks mean you never have to wait on equipment or fight for floor space.
+                        </p>
+                    </div>
+                    <button onclick="openActionModal('tour', 'Guided Facility Walkthrough')" class="self-start md:self-auto inline-flex items-center gap-2 text-sm font-semibold text-volt hover:text-voltHover cursor-pointer">
+                        Schedule an in-person walkthrough
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Asymmetric Facility Showcase Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    
+                    <!-- Feature 1: Strength & Cardio Floor (Large) -->
+                    <div class="lg:col-span-7 bg-obsidian border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-64 sm:h-80 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80" 
+                                alt="Main strength floor with power racks, dumbbells, and cardio equipment" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/1000x600/0B0C0E/D4FF00?text=Strength+%26+Cardio+Floor';"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Strength &amp; Cardio Floor</h3>
+                                <p class="text-zinc-300 text-sm sm:text-base mt-2.5 leading-relaxed">
+                                    Equipped with 12 half-racks, competition-grade barbells, calibrated bumper plates, dumbbells up to 150 lbs, and a dedicated endurance mezzanine featuring Concept2 ergometers, Woodway treadmills, and stair climbers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Functional Turf Zone -->
+                    <div class="lg:col-span-5 bg-obsidian border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-64 sm:h-80 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80" 
+                                alt="Functional training turf lane with sleds and kettlebells" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B0C0E/D4FF00?text=Functional+Training+Zone';"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Functional Training Zone</h3>
+                                <p class="text-zinc-300 text-sm sm:text-base mt-2.5 leading-relaxed">
+                                    A 40-yard shock-absorbing indoor turf track outfitted with weighted prowler sleds, competition kettlebells, sandbags, plyometric boxes, and gymnastics rigs for athletic conditioning.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Movement & Mobility Studio -->
+                    <div class="lg:col-span-4 bg-obsidian border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-56 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" 
+                                alt="Warm timber movement and yoga studio" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/800x500/0B0C0E/D4FF00?text=Movement+Studio';"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6 flex-1">
+                            <h3 class="font-display font-bold text-lg text-white">Movement &amp; Mobility Studio</h3>
+                            <p class="text-zinc-300 text-sm mt-2 leading-relaxed">
+                                Acoustic-insulated studio with sprung oak flooring, natural light, bolsters, and blocks for yoga, breathwork, and joint mobility classes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Recovery Suite -->
+                    <div class="lg:col-span-4 bg-obsidian border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-56 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" 
+                                alt="Cedar sauna and recovery lounge" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/800x500/0B0C0E/D4FF00?text=Recovery+Amenities';"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6 flex-1">
+                            <h3 class="font-display font-bold text-lg text-white">Recovery Suite</h3>
+                            <p class="text-zinc-300 text-sm mt-2 leading-relaxed">
+                                Dedicated post-training recovery featuring cedar dry saunas, cold plunge tubs, and a quiet lounge stocked with percussion therapy tools.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5: Locker & Changing Rooms -->
+                    <div class="lg:col-span-4 bg-obsidian border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-56 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80" 
+                                alt="Clean architectural changing rooms and showers" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/800x500/0B0C0E/D4FF00?text=Changing+Rooms';"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6 flex-1">
+                            <h3 class="font-display font-bold text-lg text-white">Locker &amp; Changing Rooms</h3>
+                            <p class="text-zinc-300 text-sm mt-2 leading-relaxed">
+                                Private rain-shower suites, keypad day-use lockers, fresh towel service, grooming stations, and filtered bottle-fill stations throughout.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             6. MEMBERSHIP PLANS
+        ====================================================================== -->
+        <section id="membership" class="py-20 sm:py-24 bg-obsidian border-b border-zinc-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-xs font-bold tracking-[0.2em] uppercase text-volt">Transparent Membership</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">
+                        Simple plans with zero hidden initiation fees.
+                    </h2>
+                    <p class="text-zinc-300 mt-3 text-base leading-relaxed">
+                        Every membership starts with a complimentary 1-on-1 movement assessment and scales seamlessly as your training evolves. Month-to-month flexibility included.
+                    </p>
+                </div>
+
+                <!-- Side-by-Side 3-Tier Plan Comparison -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                    
+                    <!-- Tier 1: Open Club -->
+                    <div class="bg-charcoal border border-zinc-800 rounded-2xl p-7 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-display font-bold text-xl text-white">Open Club</h3>
+                                <span class="text-xs font-medium text-zinc-400 bg-slateDark px-3 py-1 rounded-full">Self-Guided</span>
+                            </div>
+                            <p class="text-sm text-zinc-400 mt-2">Full access to our strength floor, cardio mezzanine, and locker amenities.</p>
+                            <div class="mt-6 pb-6 border-b border-zinc-800">
+                                <span class="font-display font-bold text-4xl text-white">$135</span>
+                                <span class="text-zinc-400 text-sm"> / month</span>
+                            </div>
+                            <ul class="mt-6 space-y-3.5 text-sm text-zinc-300">
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Unlimited access to Strength, Turf &amp; Cardio zones</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>1-on-1 Movement Assessment &amp; orientation</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Full locker room, shower &amp; towel service</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Dry sauna access</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-zinc-500">
+                                    <i data-lucide="minus" class="w-5 h-5 shrink-0"></i>
+                                    <span>Drop-in group classes available ($28/class)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <button onclick="openActionModal('join', 'Open Club ($135/mo)')" class="w-full py-3.5 px-5 rounded-xl bg-slateDark hover:bg-zinc-800 border border-zinc-700 text-white font-semibold text-sm transition-colors cursor-pointer">
+                                Select Open Club
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2: Unlimited Training (Most Popular) -->
+                    <div class="bg-charcoal border-2 border-volt rounded-2xl p-7 sm:p-8 flex flex-col justify-between relative shadow-2xl shadow-volt/10">
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-volt text-obsidian font-bold text-xs uppercase tracking-wider px-4 py-1 rounded-full">
+                            Most Popular
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-display font-bold text-xl text-white">All-Access Club</h3>
+                                <span class="text-xs font-semibold text-volt bg-volt/10 px-3 py-1 rounded-full">Classes + Floor</span>
+                            </div>
+                            <p class="text-sm text-zinc-300 mt-2">Complete access to all coached group classes, open gym floor, and full recovery suite.</p>
+                            <div class="mt-6 pb-6 border-b border-zinc-800">
+                                <span class="font-display font-bold text-4xl text-white">$215</span>
+                                <span class="text-zinc-400 text-sm"> / month</span>
+                            </div>
+                            <ul class="mt-6 space-y-3.5 text-sm text-zinc-200">
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Unlimited Team Training, Conditioning &amp; Mobility classes</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Unlimited Open Club floor &amp; turf access</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Full Recovery Suite (Sauna &amp; Cold Plunge)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>2 complimentary guest passes every month</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Quarterly progress check-in with a coach</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <button onclick="openActionModal('join', 'All-Access Club ($215/mo)')" class="w-full py-3.5 px-5 rounded-xl bg-volt hover:bg-voltHover text-obsidian font-bold text-sm transition-colors shadow-lg shadow-volt/15 cursor-pointer">
+                                Join All-Access
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3: Performance Coaching -->
+                    <div class="bg-charcoal border border-zinc-800 rounded-2xl p-7 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-display font-bold text-xl text-white">Performance Coaching</h3>
+                                <span class="text-xs font-medium text-zinc-400 bg-slateDark px-3 py-1 rounded-full">1-on-1 + All-Access</span>
+                            </div>
+                            <p class="text-sm text-zinc-400 mt-2">Dedicated personal training paired with full club and class privileges.</p>
+                            <div class="mt-6 pb-6 border-b border-zinc-800">
+                                <span class="font-display font-bold text-4xl text-white">$480</span>
+                                <span class="text-zinc-400 text-sm"> / month</span>
+                            </div>
+                            <ul class="mt-6 space-y-3.5 text-sm text-zinc-300">
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>4 private 60-minute Personal Training sessions / mo</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Bespoke training plan via our member app</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Everything included in All-Access Club</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Priority class booking &amp; permanent locker option</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-volt shrink-0"></i>
+                                    <span>Flexible add-on sessions at preferred member rate</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <button onclick="openActionModal('join', 'Performance Coaching ($480/mo)')" class="w-full py-3.5 px-5 rounded-xl bg-slateDark hover:bg-zinc-800 border border-zinc-700 text-white font-semibold text-sm transition-colors cursor-pointer">
+                                Apply for Coaching
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             6.5. MEMBER MOBILE APP DOWNLOAD SECTION
+        ====================================================================== -->
+        <section id="mobile-app" class="py-20 sm:py-24 bg-obsidian border-b border-zinc-800/80 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-charcoal border border-zinc-800 rounded-3xl p-8 sm:p-12 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    
+                    <!-- Left: App Copy & Store Download Buttons -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slateDark border border-zinc-700/80 text-xs font-semibold tracking-wider uppercase text-volt">
+                            <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+                            Vanguard Member App
+                        </div>
+
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+                            Your training schedule, coaching plan, and club pass in one place.
+                        </h2>
+
+                        <p class="text-zinc-300 text-base leading-relaxed max-w-xl">
+                            Download the Vanguard Athletics app for iOS and Android to reserve small-group classes, log barbell and conditioning sessions, book recovery suite slots, and scan in seamlessly at the front desk.
+                        </p>
+
+                        <!-- Key App Highlights -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                            <div class="flex items-start gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-slateDark flex items-center justify-center text-volt shrink-0">
+                                    <i data-lucide="qr-code" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Tap-to-Enter Club Pass</p>
+                                    <p class="text-xs text-zinc-400 mt-0.5">Instant barcode check-in &amp; guest pass sharing</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-slateDark flex items-center justify-center text-volt shrink-0">
+                                    <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-white">One-Tap Class Booking</p>
+                                    <p class="text-xs text-zinc-400 mt-0.5">Reserve Team Training, Mobility &amp; Recovery</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Official App Store & Google Play Buttons -->
+                        <div class="pt-3 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4">
+                            <!-- Apple App Store Button -->
+                            <button onclick="openAppDownloadModal('iOS App Store')" class="inline-flex items-center gap-3.5 bg-volt hover:bg-voltHover text-obsidian px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-volt/15 cursor-pointer text-left">
+                                <svg class="w-7 h-7 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.67-.81 1.12-1.94 1-3.07-.96.04-2.13.64-2.82 1.45-.61.7-.115 1.85-1.01 2.96 1.08.08 2.16-.53 2.83-1.34z"/>
+                                </svg>
+                                <div>
+                                    <span class="block text-[10px] font-bold uppercase tracking-wider opacity-80 leading-none">Download on the</span>
+                                    <span class="block font-display font-bold text-base leading-tight mt-0.5">App Store</span>
+                                </div>
+                            </button>
+
+                            <!-- Google Play Button -->
+                            <button onclick="openAppDownloadModal('Google Play Store')" class="inline-flex items-center gap-3.5 bg-slateDark hover:bg-zinc-800 border border-zinc-700 text-white px-6 py-3.5 rounded-xl transition-all cursor-pointer text-left">
+                                <svg class="w-6 h-6 fill-current text-volt shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
+                                </svg>
+                                <div>
+                                    <span class="block text-[10px] font-semibold uppercase tracking-wider text-zinc-400 leading-none">Get it on</span>
+                                    <span class="block font-display font-bold text-base leading-tight mt-0.5">Google Play</span>
+                                </div>
+                            </button>
+
+                            <!-- Direct SMS Link Option -->
+                            <button onclick="openActionModal('app-link', 'Text Me the App Download Link')" class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-zinc-300 hover:text-volt px-3 py-2 transition-colors cursor-pointer">
+                                <i data-lucide="send" class="w-4 h-4 text-volt"></i>
+                                Send link to phone
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Mobile App UI Preview Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="w-full max-w-xs bg-obsidian border-2 border-zinc-800 rounded-[2rem] p-5 shadow-2xl space-y-4">
+                            <!-- Phone Top Bar -->
+                            <div class="flex items-center justify-between border-b border-zinc-800/90 pb-3.5">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-lg bg-volt text-obsidian font-display font-bold text-xs flex items-center justify-center">V/A</div>
+                                    <div>
+                                        <p class="text-xs font-bold text-white leading-none">Vanguard Member</p>
+                                        <p class="text-[11px] text-zinc-400 mt-1">All-Access • West Loop</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-volt/15 text-volt text-[10px] font-bold uppercase tracking-wider">Active</span>
+                            </div>
+
+                            <!-- Digital Check-In Pass -->
+                            <div class="bg-charcoal border border-zinc-800 rounded-2xl p-4 text-center space-y-2.5">
+                                <p class="text-[11px] font-semibold uppercase tracking-widest text-zinc-400">Club Check-In Pass</p>
+                                <div class="bg-white rounded-xl p-3 flex items-center justify-center">
+                                    <!-- Clean SVG Barcode Graphic -->
+                                    <svg class="w-44 h-12 text-obsidian" viewBox="0 0 180 48" fill="currentColor" aria-label="Member Check-in Barcode">
+                                        <rect x="4" y="4" width="4" height="40"/><rect x="12" y="4" width="2" height="40"/><rect x="18" y="4" width="6" height="40"/>
+                                        <rect x="28" y="4" width="2" height="40"/><rect x="34" y="4" width="4" height="40"/><rect x="42" y="4" width="8" height="40"/>
+                                        <rect x="54" y="4" width="2" height="40"/><rect x="60" y="4" width="4" height="40"/><rect x="68" y="4" width="2" height="40"/>
+                                        <rect x="74" y="4" width="6" height="40"/><rect x="84" y="4" width="4" height="40"/><rect x="92" y="4" width="2" height="40"/>
+                                        <rect x="98" y="4" width="6" height="40"/><rect x="108" y="4" width="2" height="40"/><rect x="114" y="4" width="4" height="40"/>
+                                        <rect x="122" y="4" width="8" height="40"/><rect x="134" y="4" width="2" height="40"/><rect x="140" y="4" width="4" height="40"/>
+                                        <rect x="148" y="4" width="6" height="40"/><rect x="158" y="4" width="2" height="40"/><rect x="164" y="4" width="4" height="40"/>
+                                        <rect x="172" y="4" width="4" height="40"/>
+                                    </svg>
+                                </div>
+                                <p class="text-[11px] text-zinc-400">Scan at West Loop Reception</p>
+                            </div>
+
+                            <!-- Upcoming Reservation Preview -->
+                            <div class="bg-charcoal border border-zinc-800 rounded-2xl p-4 space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[11px] font-semibold uppercase tracking-wider text-volt">Next Session</span>
+                                    <span class="text-[11px] text-zinc-400">Coach Marcus V.</span>
+                                </div>
+                                <div>
+                                    <p class="font-display font-bold text-sm text-white">Barbell &amp; Progressive Strength</p>
+                                    <p class="text-xs text-zinc-400 mt-0.5">Strength Floor • Rack 04</p>
+                                </div>
+                                <button onclick="openAppDownloadModal('Vanguard Mobile App')" class="w-full py-2.5 rounded-xl bg-slateDark hover:bg-volt hover:text-obsidian text-white font-semibold text-xs transition-colors cursor-pointer">
+                                    Download App to Manage Bookings
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             7. CONTACT & VISIT SECTION
+        ====================================================================== -->
+        <section id="contact" class="py-20 sm:py-24 bg-charcoal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left: Club Info & Hours -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <span class="text-xs font-bold tracking-[0.2em] uppercase text-volt">Visit West Loop</span>
+                            <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-2 tracking-tight">
+                                Come see the floor in person.
+                            </h2>
+                            <p class="text-zinc-300 mt-3 text-base leading-relaxed">
+                                Have questions about memberships, corporate wellness, or how to get started? Drop by during staffed hours or send our team a note.
+                            </p>
+                        </div>
+
+                        <div class="space-y-5 text-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-slateDark flex items-center justify-center text-volt shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-white">Club Address</p>
+                                    <p class="text-zinc-300 mt-0.5">840 W Fulton Market, Suite 200<br>Chicago, IL 60607</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-slateDark flex items-center justify-center text-volt shrink-0">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-white">Club Hours</p>
+                                    <p class="text-zinc-300 mt-0.5">Monday – Friday: 5:00 AM – 10:00 PM<br>Saturday – Sunday: 6:30 AM – 8:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-slateDark flex items-center justify-center text-volt shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-white">Direct Contact</p>
+                                    <p class="text-zinc-300 mt-0.5">hello@vanguardathletics.com<br>(312) 555-0194</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Contact / Tour Form -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-obsidian border border-zinc-800 rounded-2xl p-6 sm:p-9">
+                            <h3 class="font-display font-bold text-xl text-white">Send an Enquiry or Request a Tour</h3>
+                            <p class="text-sm text-zinc-400 mt-1">Our membership advisors respond within one business day.</p>
+
+                            <form id="contact-form" class="mt-6 space-y-5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="contact-name" class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Full Name</label>
+                                        <input type="text" id="contact-name" required placeholder="Jordan Taylor" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-zinc-700 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-volt">
+                                    </div>
+                                    <div>
+                                        <label for="contact-email" class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Email Address</label>
+                                        <input type="email" id="contact-email" required placeholder="jordan@example.com" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-zinc-700 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-volt">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="contact-interest" class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Primary Interest</label>
+                                        <select id="contact-interest" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-zinc-700 text-white text-sm focus:outline-none focus:border-volt">
+                                            <option value="Book a Club Tour">Book a Club Tour</option>
+                                            <option value="All-Access Membership">All-Access Membership</option>
+                                            <option value="Open Club Membership">Open Club Membership</option>
+                                            <option value="Personal Training">1-on-1 Personal Training</option>
+                                            <option value="Beginner Foundations">Beginner Foundations</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="contact-phone" class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Phone (Optional)</label>
+                                        <input type="tel" id="contact-phone" placeholder="(312) 555-0100" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-zinc-700 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-volt">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="contact-message" class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Goals or Questions</label>
+                                    <textarea id="contact-message" rows="3" placeholder="Tell us a bit about your training background or preferred time to visit..." class="w-full px-4 py-3 rounded-xl bg-charcoal border border-zinc-700 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-volt"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-volt hover:bg-voltHover text-obsidian font-bold text-sm px-8 py-4 rounded-xl transition-colors cursor-pointer">
+                                    Submit Request
+                                    <i data-lucide="send" class="w-4 h-4"></i>
+                                </button>
+                            </form>
+
+                            <!-- Inline Confirmation Banner (No alert() used) -->
+                            <div id="contact-confirmation" class="hidden mt-6 p-4 rounded-xl bg-volt/10 border border-volt/40 text-zinc-100 text-sm flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-volt shrink-0 mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-white">Request received.</p>
+                                    <p class="text-zinc-300 mt-0.5" id="contact-confirmation-text">Thank you! A Vanguard coach will follow up shortly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================================
+         FOOTER
+    ====================================================================== -->
+    <footer class="bg-obsidian border-t border-zinc-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-volt rounded-md flex items-center justify-center text-obsidian font-display font-bold text-sm">
+                    V/A
+                </div>
+                <span class="font-display font-bold text-base text-white tracking-tight">VANGUARD ATHLETICS</span>
+            </div>
+            <p class="text-xs text-zinc-400 text-center sm:text-right">
+                &copy; 2026 Vanguard Athletics West Loop. All rights reserved. Built for every body that moves.
+            </p>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         INTERACTIVE MODAL (JOIN / TOUR / COACHING / PROGRAM DETAILS)
+    ====================================================================== -->
+    <div id="interactive-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-obsidian/80 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-charcoal border border-zinc-700 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeModal()" aria-label="Close modal" class="absolute top-5 right-5 p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-slateDark transition-colors cursor-pointer">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <span id="modal-badge" class="inline-block px-3 py-1 rounded-md bg-slateDark text-volt text-xs font-semibold uppercase tracking-wider">Membership</span>
+            <h3 id="modal-title" class="font-display font-bold text-2xl text-white mt-3">Join Vanguard Athletics</h3>
+            <p id="modal-subtitle" class="text-sm text-zinc-300 mt-2 leading-relaxed"></p>
+
+            <!-- Program Details View -->
+            <div id="modal-program-details" class="hidden mt-5 space-y-4 text-sm text-zinc-300 border-t border-zinc-800 pt-5">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-wider text-volt">Who It Suits</p>
+                    <p id="modal-program-suits" class="mt-1 leading-relaxed"></p>
+                </div>
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-wider text-volt">Session Structure</p>
+                    <p id="modal-program-session" class="mt-1 leading-relaxed"></p>
+                </div>
+                <div class="pt-3">
+                    <button id="modal-program-cta" class="w-full py-3.5 px-5 rounded-xl bg-volt hover:bg-voltHover text-obsidian font-bold text-sm transition-colors cursor-pointer">
+                        Book a Trial or Tour for This Program
+                    </button>
+                </div>
+            </div>
+
+            <!-- Action Form View (Join / Tour / Coaching) -->
+            <form id="modal-action-form" class="mt-5 space-y-4">
+                <div>
+                    <label for="modal-name" class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-1.5">Your Name</label>
+                    <input type="text" id="modal-name" required placeholder="Alex Rivera" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-700 text-white text-sm focus:outline-none focus:border-volt">
+                </div>
+                <div>
+                    <label for="modal-email" class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-1.5">Email Address</label>
+                    <input type="email" id="modal-email" required placeholder="alex@example.com" class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-700 text-white text-sm focus:outline-none focus:border-volt">
+                </div>
+                <div>
+                    <label for="modal-notes" class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-1.5">Preferred Time or Goal</label>
+                    <input type="text" id="modal-notes" placeholder="e.g., Weekday mornings, beginner strength..." class="w-full px-4 py-3 rounded-xl bg-obsidian border border-zinc-700 text-white text-sm focus:outline-none focus:border-volt">
+                </div>
+                <button type="submit" class="w-full py-3.5 px-5 rounded-xl bg-volt hover:bg-voltHover text-obsidian font-bold text-sm transition-colors mt-2 cursor-pointer">
+                    Confirm &amp; Continue
+                </button>
+            </form>
+
+            <!-- App Download QR & Direct Link View -->
+            <div id="modal-app-download" class="hidden mt-5 space-y-5 border-t border-zinc-800 pt-5 text-center">
+                <div class="bg-white p-4 rounded-2xl inline-flex items-center justify-center mx-auto shadow-lg">
+                    <!-- Clean Stylized QR Code SVG -->
+                    <svg class="w-36 h-36 text-obsidian" viewBox="0 0 100 100" fill="currentColor" aria-label="QR code to download Vanguard Athletics mobile app">
+                        <path d="M10 10h25v25H10V10zm5 5v15h15V15H15zm5 5h5v5h-5v-5zm45-10h25v25H65V10zm5 5v15h15V15H70zm5 5h5v5h-5v-5zM10 65h25v25H10V65zm5 5v15h15V70H15zm5 5h5v5h-5v-5z"/>
+                        <rect x="42" y="10" width="6" height="6"/><rect x="52" y="16" width="6" height="12"/><rect x="42" y="28" width="6" height="6"/>
+                        <rect x="10" y="42" width="12" height="6"/><rect x="28" y="42" width="6" height="12"/><rect x="42" y="42" width="16" height="16"/>
+                        <rect x="64" y="42" width="12" height="6"/><rect x="82" y="42" width="8" height="12"/><rect x="42" y="64" width="6" height="12"/>
+                        <rect x="54" y="64" width="12" height="6"/><rect x="72" y="64" width="6" height="18"/><rect x="84" y="70" width="6" height="20"/>
+                        <rect x="54" y="78" width="12" height="12"/>
+                    </svg>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-sm font-semibold text-white">Scan with your phone camera</p>
+                    <p class="text-xs text-zinc-400">Available free for iOS 16+ and Android 12+ devices.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 pt-1">
+                    <button onclick="copyAppLink()" id="copy-app-link-btn" class="flex-1 py-3 px-4 rounded-xl bg-volt hover:bg-voltHover text-obsidian font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                        Copy Download Link
+                    </button>
+                    <button onclick="openActionModal('app-link', 'Email Me the App Link')" class="flex-1 py-3 px-4 rounded-xl bg-slateDark hover:bg-zinc-700 text-white font-semibold text-xs uppercase tracking-wider transition-colors cursor-pointer">
+                        Send to Email
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Success State -->
+            <div id="modal-success" class="hidden mt-5 p-5 rounded-xl bg-obsidian border border-volt/40 text-center space-y-3">
+                <div class="w-11 h-11 rounded-full bg-volt/15 text-volt flex items-center justify-center mx-auto">
+                    <i data-lucide="check" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-display font-bold text-lg text-white">You're on the list!</h4>
+                <p id="modal-success-msg" class="text-sm text-zinc-300"></p>
+                <button onclick="closeModal()" class="mt-2 px-6 py-2.5 rounded-lg bg-slateDark hover:bg-zinc-700 text-white text-xs font-semibold uppercase tracking-wider cursor-pointer">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT INTERACTIVITY
+    ====================================================================== -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // 1. Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('menu-icon-open');
+        const iconClose = document.getElementById('menu-icon-close');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMobileMenu() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden', isHidden);
+            iconClose.classList.toggle('hidden', !isHidden);
+            mobileMenuBtn.setAttribute('aria-expanded', String(isHidden));
+        }
+        // 3. Modal Management (Join / Tour / Coaching / Program Details / App Download)
+        const modal = document.getElementById('interactive-modal');
+        const modalBadge = document.getElementById('modal-badge');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSubtitle = document.getElementById('modal-subtitle');
+        const modalProgramDetails = document.getElementById('modal-program-details');
+        const modalActionForm = document.getElementById('modal-action-form');
+        const modalAppDownload = document.getElementById('modal-app-download');
+        const modalSuccess = document.getElementById('modal-success');
+        let currentSelectionContext = '';
+
+        function openActionModal(type, selectionLabel) {
+            currentSelectionContext = selectionLabel;
+            modalProgramDetails.classList.add('hidden');
+            modalAppDownload.classList.add('hidden');
+            modalSuccess.classList.add('hidden');
+            modalActionForm.classList.remove('hidden');
+            modalActionForm.reset();
+
+            if (type === 'join') {
+                modalBadge.textContent = 'Membership Enrollment';
+                modalTitle.textContent = selectionLabel;
+                modalSubtitle.textContent = 'Reserve your membership rate and schedule your complimentary 1-on-1 movement orientation.';
+            } else if (type === 'tour') {
+                modalBadge.textContent = 'Club Visit';
+                modalTitle.textContent = selectionLabel;
+                modalSubtitle.textContent = 'Walk the training floor, explore our recovery suite, and meet a coach in person.';
+            } else if (type === 'coaching') {
+                modalBadge.textContent = 'Personal Coaching';
+                modalTitle.textContent = selectionLabel;
+                modalSubtitle.textContent = 'Share your training goals and availability to arrange an introductory consultation.';
+            } else if (type === 'app-link') {
+                modalBadge.textContent = 'Mobile App';
+                modalTitle.textContent = selectionLabel;
+                modalSubtitle.textContent = 'Enter your email below and we will send direct download links for iOS and Android.';
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openAppDownloadModal(storeName) {
+            modalActionForm.classList.add('hidden');
+            modalProgramDetails.classList.add('hidden');
+            modalSuccess.classList.add('hidden');
+            modalAppDownload.classList.remove('hidden');
+
+            const copyBtn = document.getElementById('copy-app-link-btn');
+            if (copyBtn) copyBtn.textContent = 'Copy Download Link';
+
+            modalBadge.textContent = 'Vanguard Mobile App';
+            modalTitle.textContent = 'Get Vanguard on ' + storeName;
+            modalSubtitle.textContent = 'Book classes, track training blocks, and access your digital club check-in pass.';
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function copyAppLink() {
+            const tempInput = document.createElement('input');
+            tempInput.value = 'https://vanguardathletics.com/app';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const copyBtn = document.getElementById('copy-app-link-btn');
+            if (copyBtn) {
+                copyBtn.textContent = 'Link Copied!';
+            }
+        }
+
+        function openProgramModal(title, badge, suitsText, sessionText) {
+            modalActionForm.classList.add('hidden');
+            modalAppDownload.classList.add('hidden');
+            modalSuccess.classList.add('hidden');
+            modalProgramDetails.classList.remove('hidden');
+
+            modalBadge.textContent = badge;
+            modalTitle.textContent = title;
+            modalSubtitle.textContent = 'Coached with clear progressions and scalable loads for all experience levels.';
+            document.getElementById('modal-program-suits').textContent = suitsText;
+            document.getElementById('modal-program-session').textContent = sessionText;
+
+            const ctaBtn = document.getElementById('modal-program-cta');
+            ctaBtn.onclick = () => openActionModal('tour', 'Program Trial: ' + title);
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal on backdrop click or Escape key
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+        });
+
+        // Handle Modal Form Submission
+        modalActionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('modal-name').value.trim();
+            const email = document.getElementById('modal-email').value.trim();
+
+            modalActionForm.classList.add('hidden');
+            modalSuccess.classList.remove('hidden');
+            document.getElementById('modal-success-msg').textContent =
+                `Thanks, ${name}. We've sent confirmation details for "${currentSelectionContext}" to ${email}.`;
+        });
+
+        // 4. Main Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const contactConfirmation = document.getElementById('contact-confirmation');
+        const contactConfirmationText = document.getElementById('contact-confirmation-text');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value.trim();
+            const interest = document.getElementById('contact-interest').value;
+
+            contactConfirmationText.textContent = `Thank you, ${name}. Our West Loop team has received your "${interest}" enquiry and will reach out shortly.`;
+            contactConfirmation.classList.remove('hidden');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
